@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".activity.HomeActivity">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:useDefaultMargins="true"
+        android:columnCount="2"
+        android:rowCount="2">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/voice_chat_btn"
+        android:text="语音聊天"
+        android:textSize="18sp"
+        app:backgroundTint="#75BDE0"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="fill_horizontal|center_vertical"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/info_dementia_btn"
+        android:text="患者信息"
+        android:textSize="18sp"
+        app:backgroundTint="#F8D49B"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="fill_horizontal|center_vertical"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Recommended_topics_btn"
+        android:text="推荐话题"
+        android:textSize="18sp"
+        app:backgroundTint="#F8BC9B"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="fill_horizontal|center_vertical"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quit_btn"
+        android:text="退出登录"
+        android:textSize="18sp"
+        app:backgroundTint="#F89B9B"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="fill_horizontal|center_vertical"/>
+
+
+
+
+
+    </GridLayout>
+
+</LinearLayout>

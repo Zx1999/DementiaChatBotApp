@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyDementiaChatBotMarge</string>
+    <string name="info_name">姓名</string>
+    <string name="info_sex">性别</string>
+    <string name="info_birth_year">出生年份</string>
+    <string name="info_birth_month">出生月份</string>
+    <string name="info_birth_place">出生地</string>
+
+    <string name="hint_phone">账号</string>
+    <string name="hint_password">密码</string>
+    <string name="hint_verification_code">验证码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">已经注册! 跳转登录.</string>
+    <string name="welcome">Welcome</string>
+    <string name="logout">logout</string>
+</resources>

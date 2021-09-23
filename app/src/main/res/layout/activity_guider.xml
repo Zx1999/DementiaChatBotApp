@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhaox.mydementiachatbotmarge.widgets.TitleBarView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        app:centerTitle="Chatty"
+        app:centerTitleColor="#FFF"
+        app:leftText=" "
+        app:leftTextColor="#FFF"
+        app:rightText=" "
+        app:rightTextColor="#FFF"
+        app:rightDrawable="@drawable/ic_home"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+
+        <!--        chatty的第一条消息-->
+        <RelativeLayout
+            android:id="@+id/receive_chat_content_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp">
+
+            <com.zhaox.mydementiachatbotmarge.widgets.CircleImageView
+                android:id="@+id/receive_chat_header_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_head_default_left">
+            </com.zhaox.mydementiachatbotmarge.widgets.CircleImageView>
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/receive_chat_header_1"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical"
+                android:background="@drawable/chatty_bubble"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:id="@+id/receive_text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好，我是痴呆患者的语音聊天伙伴Chatty，初次见面，提供给我一些信息帮助我了解我未来的朋友吧！"
+                    android:textSize="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:id="@+id/info_dementia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点击此处填写患者信息">
+                </com.google.android.material.button.MaterialButton>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--        user的第一条消息-->
+        <RelativeLayout
+            android:id="@+id/send_chat_content_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible">
+
+            <com.zhaox.mydementiachatbotmarge.widgets.CircleImageView
+                android:id="@+id/send_chat_header"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_head_default_right">
+            </com.zhaox.mydementiachatbotmarge.widgets.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/send_chat_header"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical"
+                android:background="@drawable/user_bubble"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/send_text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已完成"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--        chatty的第二条消息-->
+        <RelativeLayout
+            android:id="@+id/receive_chat_content_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:visibility="invisible">
+
+            <com.zhaox.mydementiachatbotmarge.widgets.CircleImageView
+                android:id="@+id/receive_chat_header_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_head_default_left">
+            </com.zhaox.mydementiachatbotmarge.widgets.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/receive_chat_header_2"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical"
+                android:background="@drawable/chatty_bubble"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:id="@+id/receive_text_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="谢谢你提供的信息，点击确认后就可以开始语音聊天啦！我会把XX感兴趣的话题记录下来，你和家人也可以和XX聊聊这些话题，或许会让XX心情更好哦！ "
+                    android:textSize="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:id="@+id/confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认">
+                </com.google.android.material.button.MaterialButton>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--        user的第二条消息-->
+        <RelativeLayout
+            android:id="@+id/send_chat_content_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible">
+
+            <com.zhaox.mydementiachatbotmarge.widgets.CircleImageView
+                android:id="@+id/send_chat_header_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_head_default_right">
+            </com.zhaox.mydementiachatbotmarge.widgets.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/send_chat_header_2"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical"
+                android:background="@drawable/user_bubble"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/send_text_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--        chatty的第三条消息-->
+        <RelativeLayout
+            android:id="@+id/receive_chat_content_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:visibility="invisible">
+
+            <com.zhaox.mydementiachatbotmarge.widgets.CircleImageView
+                android:id="@+id/receive_chat_header_3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_head_default_left">
+            </com.zhaox.mydementiachatbotmarge.widgets.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/receive_chat_header_3"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical"
+                android:background="@drawable/chatty_bubble"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/receive_text_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="即将开始语音聊天……"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
