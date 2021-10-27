@@ -32,6 +32,8 @@ public class Functions {
     // Register URL
     public static String REGISTER_URL = MAIN_URL + "register";
 
+    public static String USER_ANSWER_URL = MAIN_URL + "userAnswer";
+
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     /**

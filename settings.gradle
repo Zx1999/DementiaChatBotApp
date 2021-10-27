@@ -1,2 +1,3 @@
+include ':tagview'
 include ':app'
 rootProject.name = "MyDementiaChatBotMarge"

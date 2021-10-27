@@ -128,6 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = pref.edit();
                             editor.putString("username", username);
                             editor.putString("password", password);
+                            editor.putBoolean("isFirstEnter", true);
                             editor.apply();
                             session.setLogin(true);
                             //注册成功跳转至引导页

@@ -29,9 +29,9 @@ public class VoiceUtil {
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
     // 用HashMap存储听写结果
-    private HashMap<String, String> mIatResults = new LinkedHashMap<>();
+    public static HashMap<String, String> mIatResults = new LinkedHashMap<>();
     private String resultType = "plain";
-    private StringBuffer buffer = new StringBuffer();
+    public static StringBuffer buffer = new StringBuffer();
     private SpeechSynthesizer mTts;
     private OnUserListener userListener;
 
@@ -56,10 +56,28 @@ public class VoiceUtil {
         mIat.startListening(mRecognizerListener);
     }
 
+    // 0 小燕 青年女声 中英文（普通话） xiaoyan
+    // 1 默认 小宇 青年男声 中英文（普通话） xiaoyu
+    // 2 凯瑟琳 青年女声 英文 catherine
+    // 3 亨利 青年男声 英文 henry
+    // 4 玛丽 青年女声 英文 vimary
+    // 5 小研 青年女声 中英文（普通话） vixy
+    // 6 小琪 青年女声 中英文（普通话） vixq xiaoqi
+    // 7 小峰 青年男声 中英文（普通话） vixf
+    // 8 小梅 青年女声 中英文（粤语） vixm xiaomei
+    // 9 小莉 青年女声 中英文（台湾普通话） vixl xiaolin
+    // 10 小蓉 青年女声 汉语（四川话） vixr xiaorong
+    // 11 小芸 青年女声 汉语（东北话） vixyun xiaoqian
+    // 12 小坤 青年男声 汉语（河南话） vixk xiaokun
+    // 13 小强 青年男声 汉语（湖南话） vixqa xiaoqiang
+    // 14 小莹 青年女声 汉语（陕西话） vixying
+    // 15 小新 童年男声 汉语（普通话） vixx xiaoxin
+    // 16 楠楠 童年女声 汉语（普通话） vinn nannan
+    // 17 老孙 老年男声 汉语（普通话）
     public void string2voice(String text) {
         mTts = SpeechSynthesizer.createSynthesizer(voiceChatActivity, null);
         // 发音人
-        mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoqi");
+        mTts.setParameter(SpeechConstant.VOICE_NAME, "nannan");
         // 语速
         mTts.setParameter(SpeechConstant.SPEED, "50");
         // 音量
@@ -88,7 +106,7 @@ public class VoiceUtil {
         mIat.setParameter(SpeechConstant.ACCENT, "mandarin");
         // 设置语音前端点:静音超时时间，单位ms，即用户多长时间不说话则当做超时处理
         //取值范围{1000～10000}
-        mIat.setParameter(SpeechConstant.VAD_BOS, "4000");
+        mIat.setParameter(SpeechConstant.VAD_BOS, "3000");
         //设置语音后端点:后端点静音检测时间，单位ms，即用户停止说话多长时间内即认为不再输入，
         // 自动停止录音，范围{0~10000}
         mIat.setParameter(SpeechConstant.VAD_EOS, "1000");
@@ -129,8 +147,9 @@ public class VoiceUtil {
             // Tips：
             // 错误码：10118(您没有说话)，可能是录音机权限被禁，需要提示用户打开应用的录音权限。
             Log.d(TAG, "onError " + error.getPlainDescription(true));
-
-
+            if(error.getErrorCode()==10118) {
+                string2voice("您好像没有说话哦");
+            }
         }
 
         @Override
